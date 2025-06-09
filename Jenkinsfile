@@ -2,20 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage('checkout') {
+        stage('Checkout') {
             steps {
-            checkout([$class: 'gitSCM', branches:[[name: 'master'] extensions: [], userRemoteConfigs: [[url: 'https://github.com/SidduReddy03/Python_project.git'])
+                git branch: 'master', url: 'https://github.com/SidduReddy03/Python_project.git'
             }
         }
-        stage('build') {
+
+        stage('Build') {
             steps {
-            gitbranch: 'master', url: 'https://github.com/SidduReddy03/Python_project.git'
-            sh 'python3 math.py'
+                sh 'python3 math.py'
             }
         }
-        stage('test') {
+
+        stage('Test') {
             steps {
-            sh 'python3 -m pytest'
+                sh 'python3 -m pytest'
             }
         }
     }
