@@ -8,12 +8,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                bat 'echo Building project...' // or your actual build command
+                bat 'python3 math.py'
             }
         }
         stage('Test') {
             steps {
-                bat 'echo Running tests...' // your test command here
+                bat 'python3 -m pytest'
             }
         }
     }
