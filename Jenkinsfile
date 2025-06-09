@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-            checkout([$class: 'gitSCM', branches:[[name: 'main'] extensions: [], userRemoteConfigs: [[url: ])
+            checkout([$class: 'gitSCM', branches:[[name: 'master'] extensions: [], userRemoteConfigs: [[url: 'https://github.com/SidduReddy03/Python_project.git'])
             }
         }
         stage('build') {
             steps {
-            gitbranch: 'main', url:
+            gitbranch: 'master', url: 'https://github.com/SidduReddy03/Python_project.git'
             sh 'python3 math.py'
             }
         }
